@@ -1,4 +1,4 @@
-package week5.day2HW;
+package mandatoryHomeWork.week5;
 
 public class SlopeStrightLine {
 
