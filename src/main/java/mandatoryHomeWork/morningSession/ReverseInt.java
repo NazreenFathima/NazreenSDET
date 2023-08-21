@@ -30,7 +30,7 @@ Return true if reversed2 equals num. Otherwise return false.
 	
 	public boolean reverseInt (int num)
 
-	{
+	{  //test
 		int reminder, sum=0, sum1=0, reminder1;
 		int temp=num;
 		while (num>0)
