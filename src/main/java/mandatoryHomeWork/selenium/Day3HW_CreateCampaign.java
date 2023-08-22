@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Day3HW_CreateCampaign {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws InterruptedException 
 	{
 		// TODO Auto-generated method stub
 		/*
@@ -41,17 +41,34 @@ public class Day3HW_CreateCampaign {
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
 		driver.findElement(By.xpath("//p[text()='Sales']")).click();
 		
-		driver.findElement(By.xpath("//a[@title='Campaigns']")).click();
+		//driver.findElement(By.xpath("//a[@title='Campaigns']")).click();
 		
 		
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		WebElement campaign = driver.findElement(By.xpath("//a[@title='Campaigns']"));
-		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", campaign);
-		campaign.click();
-		
+		jsExecutor.executeScript("arguments[0].click();", campaign);
 		
 		driver.findElement(By.xpath("//a[@title='New']")).click();
+		driver.findElement(By.xpath("//input[@type='text' and @maxlength='80']")).sendKeys("Bootcamp by Naz");
 		
+	
+		driver.findElement(By.xpath("//div[@class='form-element']//a")).click();
+		driver.findElement(By.xpath("(//td[@aria-selected='true']//following-sibling::td)[1]")).click();
+		// End date as Tomorrow+1
+		driver.findElement(By.xpath("(//div[@class='form-element'])[2]")).click();
+		driver.findElement(By.xpath("(//td[@aria-selected='true']//following-sibling::td)[2]")).click();
+		
+		driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
+		
+		Thread.sleep(10000);
+		boolean newCampaign = driver.getPageSource().contains("Bootcamp by Naz");
+		if(newCampaign==true)
+		{
+			System.out.println("New Camppaign is created");
+		}
+		else
+			System.out.println("New Camppaign is not created");
+		driver.quit();
 		
 		
 	}
