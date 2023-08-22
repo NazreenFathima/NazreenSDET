@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class FLowerInsertion 
 {
 	/*
-	 * understood the prob :Yes
+	 * Understood the prob :Yes
 	 * input : int[] and int
 	 * output : boolean
 	 * 
