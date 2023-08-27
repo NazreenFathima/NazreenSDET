@@ -11,8 +11,8 @@ public class SummaryRange
 {
 	/*
 	 * Understood the prob : YES
-	 * input: 
-	 * output :
+	 * input: List<String>
+	 * output : int[]
 	 * 
 	 * Pseudocode:
 	 * 1. Iterate a while loop in a for loop to check arr[i]+1 equals arr[i+1],if yes increment i by 1
