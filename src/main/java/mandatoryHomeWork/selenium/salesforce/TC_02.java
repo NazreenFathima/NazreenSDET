@@ -7,6 +7,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class TC_02 {
 
@@ -47,11 +50,6 @@ public class TC_02 {
 
 		//3. Click View All and click Individuals from App Launcher
 		driver.findElement(By.xpath("//button[@class='slds-button']")).click();
-
-		//JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		//WebElement individual = driver.findElement(By.xpath("//p[text()='Individuals']"));
-		//jsExecutor.executeScript("arguments[0].scrollIntoView(true);", individual);
-		//individual.click();
 		driver.findElement(By.xpath("//input[@part='input']")).sendKeys("individual");
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		WebElement individual = driver.findElement(By.xpath("//span[@class='slds-truncate label-display']"));
@@ -69,9 +67,6 @@ public class TC_02 {
 	    driver.findElement(By.xpath("//a[@title='Edit']")).click();
 	    
 	    //7.Select Salutation as 'Mr'
-	    //WebElement salutation = driver.findElement(By.xpath("(//a[@role='button'][normalize-space()='--None--'])[1]"));
-	    //Select drpdown = new Select(salutation);
-	    //drpdown.selectByIndex(0);
 	    WebElement salutation = driver.findElement(By.xpath("(//a[@role='button'][normalize-space()='--None--'])[1]"));
 	    JavascriptExecutor js1 = (JavascriptExecutor)driver;
 	    js1.executeScript("arguments[0].click();", salutation);
@@ -82,15 +77,11 @@ public class TC_02 {
 
 	    //9. Click on Save and Verify the first name as 'Ganesh'"
 	    driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
-
-	    String firstName = driver.findElement(By.xpath("//a[@data-refid='recordId']")).getText();
-		if(firstName.equals("Ganesh"))
-		{
-			System.out.println("Name verified");
-		}
-		else 
-			System.out.print("Name not verified");
-
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//span[@class='toastMessage slds-text-heading--small forceActionsText']"))));
+	    Assert.assertEquals(true, driver.findElement(By.xpath("//a[@data-refid='recordId']")).getText().contains("Ganesh") );
+	    driver.quit();
 	}
+
 }
 
