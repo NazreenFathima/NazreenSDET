@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 
 public class TC_04 {
 
@@ -66,14 +67,7 @@ public class TC_04 {
 		//10. Verify the Alert message (Complete this field) displayed for the Last Name"	 
 		String expected = "Complete this field.";	 
 		String actual = driver.findElement(By.xpath("//li[@class='form-element__help']")).getText();	 
-		if (actual.equals(expected))	 
-		{	 	
-			System.out.print("Alert message verified");	 
-		}	 
-		else	 
-		{	 	
-			System.out.print("Alert message is not verified");	 
-		}	 
+		Assert.assertEquals(expected, actual); 
 
 	}
 

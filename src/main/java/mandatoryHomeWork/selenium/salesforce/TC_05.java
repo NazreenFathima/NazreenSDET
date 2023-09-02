@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 
 public class TC_05 {
 
@@ -72,15 +73,9 @@ public class TC_05 {
 		{			
 			after.add(webElement.getText());		
 		}
-		//Assert.assertEquals(after, before);		
-		if(after.equals(before))		
-		{			
-			System.out.println("Individuals displayed in ascending order by Name.");		
-		}		
-		else		
-		{			
-			System.out.println("Individuals displayed in descending order by Name.");		
-		}	 	
-		}
+		Assert.assertEquals(after, before);	
+		driver.quit();
+	
+	}
 
 	}
