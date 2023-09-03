@@ -26,6 +26,7 @@ public class TC003_CreateLegalEntityWithoutMandatoryFields
 9. Click on Save
 10. Verify the Alert message (Complete this field) displayed for Name
 	 */
+	
 	WebDriver driver;
     String actualAlertText="Review the following fields";
 
