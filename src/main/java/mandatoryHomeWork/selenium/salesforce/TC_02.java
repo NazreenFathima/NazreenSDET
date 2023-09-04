@@ -60,10 +60,11 @@ public class TC_02 {
 
 	    //6. Click on the Dropdown icon and Select Edit
 	    Thread.sleep(1000);
-	    WebElement java = driver.findElement(By.xpath("//span[@class='slds-icon_container slds-icon-utility-down']//span[1]"));
-	    JavascriptExecutor js = (JavascriptExecutor)driver;
-	    js.executeScript("arguments[0].click();", java);
-	    Thread.sleep(1000);
+	    driver.findElement(By.xpath("//span[@class='slds-icon_container slds-icon-utility-down']//span[1]")).click();
+	    //WebElement java = driver.findElement(By.xpath("//span[@class='slds-icon_container slds-icon-utility-down']//span[1]"));
+	    //JavascriptExecutor js = (JavascriptExecutor)driver;
+	    //js.executeScript("arguments[0].click();", java);
+	    //Thread.sleep(1000);
 	    driver.findElement(By.xpath("//a[@title='Edit']")).click();
 	    
 	    //7.Select Salutation as 'Mr'
