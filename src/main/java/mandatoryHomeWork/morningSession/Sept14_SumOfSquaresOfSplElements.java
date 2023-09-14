@@ -3,7 +3,7 @@ package mandatoryHomeWork.morningSession;
 import org.junit.Test;
 import org.testng.Assert;
 
-public class SumOfSquaresOfSplElements 
+public class Sept14_SumOfSquaresOfSplElements 
 {
 	/*
 	 * understood:
