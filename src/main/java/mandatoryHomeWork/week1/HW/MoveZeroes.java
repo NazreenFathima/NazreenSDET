@@ -13,8 +13,8 @@ public int[] moveZeroes(int[] nums) {
             {
                 if(nums[i] == 0)
                 {
-                    int temp = 0;
-                    temp = nums[i];
+                    //int temp = 0;
+                    int temp = nums[i];
                     nums[i] = nums[j];
                     nums[j] = temp;
 
