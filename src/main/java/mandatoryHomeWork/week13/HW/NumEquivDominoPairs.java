@@ -6,6 +6,8 @@ import org.testng.Assert;
 public class NumEquivDominoPairs 
 {
 	/*
+	 * https://leetcode.com/problems/number-of-equivalent-domino-pairs/
+	 * 
 	 * understood : yes
 	 * input : int[][]
 	 * output : int
