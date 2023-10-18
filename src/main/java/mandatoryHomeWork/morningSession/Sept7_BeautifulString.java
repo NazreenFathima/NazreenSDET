@@ -58,4 +58,12 @@ public class Sept7_BeautifulString
 	 int actual = beautifulString("01011");
 	 Assert.assertEquals(1, actual);
 	 }
+	 
+	 @Test
+	 public void test4() 
+	 {
+	 int actual = beautifulString("10101");
+	 Assert.assertEquals(0, actual);
+	 }
+	 
 }

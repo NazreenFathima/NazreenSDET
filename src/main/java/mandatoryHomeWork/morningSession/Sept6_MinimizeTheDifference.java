@@ -28,7 +28,7 @@ public class Sept6_MinimizeTheDifference
 			{
 				arr[i]=arr[i]+k;
 			}
-			else
+			else if (arr[i]>k)
 			{
 				arr[i]=arr[i]-k;
 			}
