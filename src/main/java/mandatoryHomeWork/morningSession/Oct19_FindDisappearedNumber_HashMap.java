@@ -21,7 +21,7 @@ public class Oct19_FindDisappearedNumber_HashMap
 	 * 
 	 * PSeudocode: 
 	 * 1) CReate a hashmap nd ArrayLsit
-	 * 2) Add the int array in hashmap key-number, value-1
+	 * 2) Add the int array in hashmap key-number, value-true/false
 	 * 3) Iterate through the for loop from 1 till array length
 	 * 4) if hashMap doesnt contain the num -- > add to arrayList
 	 * 5) return arrayList;
@@ -29,13 +29,13 @@ public class Oct19_FindDisappearedNumber_HashMap
 
 	public List<Integer> findDisappearedNumbers(int[] nums) 
 	{
-		Map<Integer, Integer> hm = new HashMap<>();
+		Map<Integer, Boolean> hm = new HashMap<>();
 		ArrayList<Integer> al = new ArrayList<>();
 
 		for(int i=0; i<nums.length; i++)
 		{
 			int num = nums[i];
-			hm.put(num, 1);
+			hm.put(num, true);
 		}
 
 		for(int i=1; i<=nums.length; i++)
