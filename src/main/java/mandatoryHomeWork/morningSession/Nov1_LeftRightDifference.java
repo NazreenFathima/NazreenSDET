@@ -3,7 +3,7 @@ package mandatoryHomeWork.morningSession;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LeftRightDifference 
+public class Nov1_LeftRightDifference 
 {
 	/*
 	 * https://leetcode.com/problems/left-and-right-sum-differences/
