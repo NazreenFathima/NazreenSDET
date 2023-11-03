@@ -35,7 +35,7 @@ public class FindAllAnagram
 		int k=s.length()-p.length();
 		int n=p.length();
 		
-		List<Integer> result = new ArrayList();
+		List<Integer> result = new ArrayList<>();
 		
 		for(int i=0; i<=k; i++)
 		{
